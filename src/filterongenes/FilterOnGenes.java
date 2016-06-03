@@ -92,7 +92,11 @@ public class FilterOnGenes {
         readCDSFasta();
         CreateOutPutFile();
     }
-
+    /**
+     *reads the CDS file and for each line and creates a cds object with the id and the sequence of the cds.
+     * after this it checks if the gene id is in the list of ids that have a conversion rate.
+     * when it does adds the gene id and the cds object to a hashmap.
+     */
     private void readCDSFasta() throws ParseException, IOException {
         Pattern re = Pattern.compile("(?<=gene:)ENSG\\d+");
         FileWriter writer = new FileWriter();
@@ -115,7 +119,6 @@ public class FilterOnGenes {
                             }
                         }
                     }
-
                 }
                 ID = line;
                 sequence = "";
