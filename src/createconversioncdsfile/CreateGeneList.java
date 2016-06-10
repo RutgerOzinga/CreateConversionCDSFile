@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package filterongenes;
+package createconversioncdsfile;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -71,7 +71,7 @@ public class CreateGeneList {
      * searches for the index of the protein and transcript values.
      * @param header the first line of the conversion file.
      */
-    private void setIndex(String header) {
+    public void setIndex(String header) {
         int count = 0;
         String[] splitted = header.split("\t");
         for (String item : splitted) {
@@ -96,5 +96,19 @@ public class CreateGeneList {
      */
     public HashMap getGeneList() {
         return geneMap;
+    }
+    /**
+     * returns the transcript index.
+     * @return an int
+     */
+    public int getTransIndex(){
+        return transcriptIndex;
+    }
+    /**
+     * returns the protein index.
+     * @return an int.
+     */
+    public int getProteinIndex(){
+        return proteinIndex;
     }
 }
